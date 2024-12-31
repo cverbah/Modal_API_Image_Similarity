@@ -8,13 +8,6 @@ import time
 #from typing import List, Annotated, Union
 
 app = App(name="fastapi-image-similarity")
-#image = (Image.micromamba()  # manual installation of cuda for tensorflow
-#         .micromamba_install("cudatoolkit=11.2", "cudnn=8.1.0", "cuda-nvcc",
-#         channels=["conda-forge", "nvidia"],
-#        )
-#        .pip_install("pandas==2.2.2", "numpy==1.24.3", "matplotlib==3.7.1", "requests", "Pillow==10.3.0",
-#                     "opencv-python-headless==4.10.0.84","jax", "jaxlib", "transformers==4.40.0", "nvidia-tensorrt",
-#                     "fastapi==0.111.0", "tensorflow~=2.9.1"))
 dockerhub_image = (Image.from_registry("tensorflow/tensorflow:2.12.0-gpu",)
                    .pip_install("protobuf==3.20.*", "pandas", "numpy", "matplotlib",
                                 "requests", "Pillow", "opencv-python-headless",
